@@ -1,0 +1,19 @@
+{
+  "name": "clase3bis",
+  "version": "1.0.0",
+  "description": "una prueba de package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "react",
+    "node"
+  ],
+  "author": "camada2620",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

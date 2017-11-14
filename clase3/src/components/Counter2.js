@@ -2,11 +2,10 @@ import React from 'react';
 
 class Counter2 extends React.Component {
 
-    constructor(){
-        super();
-        console.log('arriba!!!!');
+    constructor(props){
+        super(props);
         this.state = {
-            counter: 1116,
+            counter: props.inicio,
             counter2: 10,
         }
     }
@@ -25,7 +24,7 @@ class Counter2 extends React.Component {
                 <br/>
                 <br/>
                 {this.state.counter}
-                <button onClick={this.sumar} >Add</button>
+                <button onClick={this.sumar}>Add</button>
                 <br/>
                 {this.state.counter2}
             </div>

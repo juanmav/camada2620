@@ -25,6 +25,7 @@ class App extends React.Component {
                     <Counter/>
                     <Counter/>
                     <Counter2 inicio={10}/>
+                    <Counter2 inicio={200}/>
                 </div>
             </div>
         );
