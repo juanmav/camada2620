@@ -1,4 +1,5 @@
 import React from 'react';
+import PostItem from './PostItem';
 
 class PostList extends React.Component {
 
@@ -27,16 +28,7 @@ class PostList extends React.Component {
                 {
                     //this.state.posts.length ? this.state.posts.length : 'Cargando Posts....'
                     this.state.posts.length ?
-                        this.state.posts.map(function(p, index){ // la p es post uno solo.
-                            return (
-                                <div>
-                                    { index + '.'+ p.title }<br/>
-                                    { p.body }
-                                    <br/>
-                                    <hr/>
-                                </div>
-                            )
-                        })
+                        this.state.posts.map( (p, index) => <PostItem {...p} index={index}/>)
                         :
                         'Cargando Posts....'
                 }
