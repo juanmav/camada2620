@@ -10,8 +10,6 @@ class Login extends React.Component {
         }
     }
 
-
-
     generatedHandleAttribute = (attributeName) => { // email o password
         /*
         * handleEmail = (event) => {

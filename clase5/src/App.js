@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-import Login from './components/Login/Login.js';
-import PostList from './components/Post/PostList.js';
+import Login from './components/Login/Login';
+import PostList from './components/Post/PostList';
 
 class App extends Component {
   render() {
