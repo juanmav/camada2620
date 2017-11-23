@@ -21,15 +21,18 @@ class PostList extends React.Component {
 
     }
 
+    goToAdd = () => { window.location.href = '/post/add' };
+
     render(){
         console.log('renderizo la pantalla');
 
         return (
             <div>
+                <button onClick={this.goToAdd}>Agregar Post</button>
                 {
                     //this.state.posts.length ? this.state.posts.length : 'Cargando Posts....'
                     this.state.posts.length ?
-                        this.state.posts.map( (p, index) => <PostItem {...p} index={index}/>)
+                        this.state.posts.map( (p, index) => <PostItem key={index} {...p} index={index}/>)
                         :
                         'Cargando Posts....'
                 }

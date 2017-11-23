@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import Login from './components/Login/Login';
 import PostList from './components/Post/PostList';
+import PostForm from './components/Post/PostForm';
 
 class App extends Component {
   render() {
@@ -17,7 +18,15 @@ class App extends Component {
                 <div>
                     <Route path={'/'} exact={true} component={Login}/>
                     <Route path={'/postlist'} exact={true} component={PostList}/>
-
+                    <Route path={'/post/add'} exact={true} component={PostForm}/>
+                    <Route
+                        path={'/post/edit/:postId'}
+                        exact={true}
+                        render={ ({match}) => {
+                            console.log(match.params.postId);
+                            return <PostForm postId={match.params.postId}/>
+                        }}
+                    />
                 </div>
             </Router>
 

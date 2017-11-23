@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class PostItem extends React.Component {
 
@@ -6,14 +7,20 @@ class PostItem extends React.Component {
         super(props)
     }
 
+
+    goToEdit = () => {
+        window.location.href = '/post/edit/' + this.props.id
+    };
+
     render(){
         return (
             <div>
                 <h1>{ (this.props.index + 1)  +'. '+this.props.title }</h1>
                 <p>{this.props.body}</p>
-                <button onClick={this.apreto}>Like</button>
-                <button onClick={this.apreto}>Edit</button>
-                <button onClick={this.apreto}>Delete</button>
+                <button>Like</button>
+                <Link to={'/post/edit/' + this.props.id } > Editar </Link>
+                <button onClick={this.goToEdit}>Edit</button>
+                <button>Delete</button>
             </div>
         )
     }

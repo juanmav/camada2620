@@ -38,7 +38,7 @@ class Login extends React.Component {
         console.log(this.state);
         return (
             <div>
-                email: <input onChange={this.generatedHandleAttribute('email')}/><br/>
+                email: <input className="container" onChange={this.generatedHandleAttribute('email')}/><br/>
                 password: <input type="password" onChange={this.generatedHandleAttribute('password')}/><br/>
                 <button onClick={this.login} disabled={this.state.loading}>Login!</button>
             </div>
