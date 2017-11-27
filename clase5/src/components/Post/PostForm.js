@@ -1,6 +1,7 @@
 import React from 'react';
 import { generatedHandleAttribute } from '../helpers/forms';
 import './post.css'
+import { actualizarOcrear } from './backend';
 
 class PostForm extends React.Component {
 
@@ -32,27 +33,15 @@ class PostForm extends React.Component {
     }
 
     save = () => {
-
         console.log(this.state);
         this.setState({ loading : true});
-
-        if(this.props.postId){
-            console.log('salvo edicion');
-            // PUT
-            setTimeout(() => {
+        actualizarOcrear(this.state, this.props.postId)
+            .then( data => {
+                console.log(data);
+                alert(this.props.postId ? 'Actualizado!' : 'Creado!');
                 this.setState({ loading : false});
                 window.location.href = '/postlist';
-            }, 1500)
-        } else {
-            console.log('creo!');
-            // POST
-            setTimeout(() => {
-                this.setState({ loading : false});
-                window.location.href = '/postlist';
-            }, 1500)
-        }
-
-
+            })
     };
 
     styles = {
@@ -83,7 +72,11 @@ class PostForm extends React.Component {
                     disabled={this.state.loading}
                 />
                 <br/>
-                <button onClick={this.save} disabled={this.state.loading}>Salvar!</button>
+                <button
+                    onClick={this.save}
+                    disabled={this.state.loading}>
+                    { this.props.postId ? 'Salvar!': 'Crear!'}
+                    </button>
             </div>
         )
     }
