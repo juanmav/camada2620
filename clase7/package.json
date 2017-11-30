@@ -1,0 +1,21 @@
+{
+  "name": "clase7",
+  "version": "1.0.0",
+  "description": "pruebas node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "es6",
+    "async",
+    "await"
+  ],
+  "author": "camada2620",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  }
+}
