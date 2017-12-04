@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component{
 
@@ -6,6 +7,8 @@ class Login extends React.Component{
         return(
             <div>
                 Login Form!
+
+                <Link to={'/register'}> Registrar </Link>
             </div>
         )
     }

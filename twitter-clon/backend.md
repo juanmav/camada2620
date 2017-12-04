@@ -26,18 +26,18 @@ trabajando durante viendo durante el curso.
 
 ### Usuarios [/users/]
 
-- Crear una cuenta [/users/][POST]
+- Crear una cuenta [/register/][POST]
 
 **Resquest**
 
 ```
-    {
-        mail: 'mail@mail.com'
-        username: 'username01',
-        password: '123456789'
-        name: 'Roberto'
-        lastname: 'Roberson'
-    }
+      {
+           "email": "juancito@mail.com",
+           "password": "1234",
+           "name": "Juanctio",
+           "lastname": "Roberson"
+       }
+
 ```
 
 **Response**
@@ -49,8 +49,8 @@ trabajando durante viendo durante el curso.
 **Request**
 ```
     {
-        username: 'username01',
-        password: '123456789'
+        "email": "juancito@mail.com",
+        "password": "1234"
     }
 ```
 
