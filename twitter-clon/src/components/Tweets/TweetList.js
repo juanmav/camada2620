@@ -1,4 +1,5 @@
 import React from 'react';
+import TweetItem from './TweetItem';
 
 class TweetList extends React.Component {
 
@@ -30,7 +31,13 @@ class TweetList extends React.Component {
         // hacer un TweetItem para mostrar en la lista.
 
         return (
-            <div> Tweet! </div>
+            <div>
+                {
+                    this.state.tweets.map( t => {
+                        return <TweetItem key={t._id} {...t} algo={'pepe'}/>
+                    })
+                }
+            </div>
         )
     }
 }

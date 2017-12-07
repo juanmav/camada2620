@@ -34,8 +34,6 @@ class App extends React.Component {
                                     <Route path="/register" exact={true} component={Register}/>
                                 </div>
                         }
-
-
                     </Router>
                 </div>
             </div>

@@ -62,9 +62,9 @@ trabajando durante viendo durante el curso.
 }
 ```
 
-## Twits
+## Tweets
 
-- Todos los twits [/twits/?username={value}][GET]
+- Todos los twits [/tweets/?username={value}][GET]
 
 **Query**
 
