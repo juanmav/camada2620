@@ -30,7 +30,10 @@ const mapDispatchToProps = (dispatch) => {
         modifyUsername: (username) => dispatch(actions.modifyUsername(username)),
         modifyPassword: (password) => dispatch(actions.modifyPassword(password)),
         clearForm: () => dispatch(actions.clearForm()), // { type: 'CLEAN_FORM' }
-        login: (username, password) => dispatch(actions.login(username, password))
+        login: (username, password) => {
+            dispatch(actions.login(username, password))
+
+        }
 
     }
 };
