@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import TweetList from './components/Tweets/TweetList';
+import TweetForm from './components/Tweets/TweetForm';
 
 class App extends React.Component {
 
@@ -19,14 +20,20 @@ class App extends React.Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <div>
-                    Aca es el centro de la app
-
                     <Router>
 
                         {
                             this.token ?
                                 <div>
                                     <Route path="/" exact={true} component={TweetList}/>
+                                    <Route path="/tweet/add"  exact={true} component={TweetForm}/>
+                                    <Route
+                                        path="/tweet/edit/:tweetId"
+                                        exact={true}
+                                        render={({match})=> {
+                                            return <TweetForm tweetId={match.params.tweetId}/>
+                                        }}
+                                    />
                                 </div>
                                 :
                                 <div>

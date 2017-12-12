@@ -6,7 +6,8 @@ class TweetList extends React.Component {
     constructor(){
         super();
         this.state = {
-            tweets : []
+            tweets : [],
+            loading: true
         }
     }
 
@@ -21,9 +22,19 @@ class TweetList extends React.Component {
 
             .then( response => response.json())
             .then( tweets => {
-                this.setState({ tweets: tweets})
+                this.setState(
+                    {
+                        tweets: tweets,
+                        loading: false
+                    }
+                )
             })
     }
+
+    removeTweet = (id) => {
+        let list = this.state.tweets.filter( t => t._id != id).reverse();
+        this.setState({ tweets: list})
+    };
 
     render(){
         console.log(this.state.tweets);
@@ -32,9 +43,15 @@ class TweetList extends React.Component {
 
         return (
             <div>
+                <button onClick={ () => window.location.href = '/tweet/add'}> Crear un Tweet! </button>
+
+                { /* Aca podria poner un dialog form para crear el tweet.*/}
+
+                <hr/>
+                { this.state.loading ? 'Cargando.....' : ''}
                 {
-                    this.state.tweets.map( t => {
-                        return <TweetItem key={t._id} {...t} algo={'pepe'}/>
+                    this.state.tweets.reverse().map( t => {
+                        return <TweetItem key={t._id} {...t} removeFn={this.removeTweet}/>
                     })
                 }
             </div>

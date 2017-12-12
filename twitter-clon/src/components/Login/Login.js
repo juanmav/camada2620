@@ -47,6 +47,7 @@ class Login extends React.Component{
                 console.log(data.token);
                 alert('Login exitoso!');
                 localStorage.setItem('token', data.token);
+                localStorage.setItem('email', this.state.user.email);
                 window.location.href = '/';
             })
             .catch( err => {
